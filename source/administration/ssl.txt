@@ -209,8 +209,8 @@ To connect to a replica set via SSL, use the following form:
 .NET
 ~~~~
 
-As of release 1.6 of the .NET driver supports SSL connections with
-:program:`mongod` an :program:`mongos` instances. To connect using
+As of release 1.6, the .NET driver supports SSL connections with
+:program:`mongod` and :program:`mongos` instances. To connect using
 SSL, you must add an option to the connection string, specifying
 ``ssl=true`` as follows:
 
@@ -220,9 +220,9 @@ SSL, you must add an option to the connection string, specifying
     var server = MongoServer.Create(connectionString);
 
 The .NET driver will validate the certificate against the local
-trusted certificate store, in addition to providing encryption of the
-server. This behavior may produce issues during testing, if the server
-uses a self-signed certificate. If you encounter this issue, add the
+trusted certificate store, in addition to providing encryption for 
+connections to the server. This behavior may produce issues during testing, if the server
+uses a self-signed certificate. If you encounter issues, add the
 ``sslverifycertificate=false`` option to the connection string to
 prevent the .NET driver from validating the certificate, as follows:
 
